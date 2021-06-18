@@ -13,7 +13,15 @@ def match(sorters,nome):
 
     if oppo == posizione:
         oppo += 1
-    
+    whilte True:
+        
+        if oppo > len(sortes):
+            oppo -= 2
+        else:
+            break
+            
+    if oppo == posizione:
+        oppo += 1
     
     sfidante = sortes[int(oppo)]
 
