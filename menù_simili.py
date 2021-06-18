@@ -15,7 +15,33 @@ def negozio(client, message):
     
     message.reply_text(txt, reply_markup = reply_markup)
         
-
+        
+@app.on_message(filters.command(["boss"]) & filters.private & ~filters.user(bannati))
+def approccio(client, message):   
+    username = message.from_user.username
+    if "boss" in player[username]:
+            pass
+    else:
+        player[username]["boss"] = dict() 
+            
+    txt = "I boss sono acerrimi nemici di noi sfigatelli di NFT!\nE' importante prepararsi bene prima di scegliere che boss si vuole affrontare!\nInformati con /wikiboss!\nIn caso di vittoria ricchi ed unici premi!\nViceversa ore ed ore di sofferenza!\n"
+    txt += "\nOggi ci sono i seguenti boss:\n"
+    for b in bossoggi:
+        if b in player[username]["boss"]:
+            lv = player[username]["boss"][b]
+            txt += f"{b} - lv {lv}\n"
+        else:
+            
+            txt += f"{b} - Nuovo!\n"
+    
+    bottoni = list()
+    for appz in bossoggi:
+        bottoni.append([InlineKeyboardButton(appz, callback_data = appz)])
+        
+    reply_markup = InlineKeyboardMarkup(bottoni)
+    
+    message.reply_text(txt, reply_markup = reply_markup)
+    
 @app.on_message(filters.command(["approccio"]) & filters.private & ~filters.user(bannati))
 def approccio(client, message):   
     username = message.from_user.username
