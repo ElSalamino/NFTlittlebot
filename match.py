@@ -13,7 +13,7 @@ def match(sorters,nome):
 
     if oppo == posizione:
         oppo += 1
-    whilte True:
+    while True:
         
         if oppo > len(sortes):
             oppo -= 2
