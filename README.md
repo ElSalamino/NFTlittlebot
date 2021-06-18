@@ -11,3 +11,5 @@ Ecco un piccolo estratto di alcuni comandi di nft.
 
 -Posso suggerire modifice?
 -Si
+
+Sarebbe il top chiedere prima di rubare, ma anche un tag a me ed nft ci sta
